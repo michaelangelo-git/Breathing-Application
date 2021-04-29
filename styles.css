@@ -15,7 +15,7 @@
 
     width: 50%;
     height: 80%;
-    background-color: green;
+    background-color: transparent;
 }
 
 .breathe-instruction-wrapper {
@@ -36,6 +36,7 @@
     top: 10%;
     background-color: transparent;
     padding: 15px;
+
 }
 
 .count {
@@ -62,12 +63,9 @@
     }
 
     .breathe-instruction-wrapper{
-        
-        position: absolute;
-        color:white;
-        background-color: transparent;
         left: -33%;
         top: 34%;
-
+        
+        font-size: 12px;
     }
 }
