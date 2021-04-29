@@ -94,15 +94,6 @@ function breathInstructionSwitch(beginningElement, targetElement) { //idea, span
  * choose how long you would like to breath
  */
 
-
-
-
-//I can do this, I am proud of myself for taking the time to think about it. Clearing my mind is very helpful. 
-//I now have a plan and I know what to do to complete the boxes animation. Typography and fancy stuff can be figured out later on.
-//Plus this can help myself and others who choose to view it. It can help increase their focus
-
-
-
 //use anime.js timelines and function loop on final h2 to add a text effect
 //TO DO: finish countdown method
 // link this code with github
