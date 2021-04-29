@@ -62,9 +62,12 @@
     }
 
     .breathe-instruction-wrapper{
+        
+        position: absolute;
+        color:white;
+        background-color: transparent;
         left: -33%;
         top: 34%;
 
-        font-size: 45px;
     }
 }
