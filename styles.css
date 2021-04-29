@@ -52,7 +52,6 @@
     top: 40vh;
     left: 70vw;
     
-    color: red;
     text-align: center;
 }
 
@@ -65,7 +64,7 @@
     .breathe-instruction-wrapper{
         left: -33%;
         top: 34%;
-        
+        color:red;
         font-size: 12px;
     }
 }
