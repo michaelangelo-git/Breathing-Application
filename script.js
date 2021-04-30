@@ -305,7 +305,7 @@ function fadeAndRemember(targetClassName, startOpacity, endOpacity, delay) {
         delay: delay,
         duration: 1000,
         easing: 'linear',
-      
+
     });
 }
 
@@ -314,26 +314,29 @@ function fadeAndRemember(targetClassName, startOpacity, endOpacity, delay) {
 /***************************************************************************************************/
 /***************************FUNCTION TESTING AREA **************************************************/
 
-let sessionSubmit = document.querySelector('.choose-sessions');
-sessionSubmit.onsubmit = function(){
+const sessionSubmit = document.querySelector('.session-form');
+
+sessionSubmit.onsubmit = function () {
     let amountOfSessions = document.getElementById('numSessions').value;
-    window.alert(amountOfSessions);
-    if (amountOfSessions == 0){
-        alert("You must at least enter 1!");
-    } else {
+
+    console.log(amountOfSessions); //logging for testing
+    //error checking on form submission
+    if (amountOfSessions == 0) {
+        alert("Something tells me 0 breaths is a bad idea");
+        location.reload();
+    }
+    else if (amountOfSessions < 0) {
+        alert("At this time negative breathing is discouraged");
+    }
+    else {
         boxBreathingAnimation(amountOfSessions);
         changeBreathingInstructions(amountOfSessions);
+        //offer to go again after animation?
+        //pop up mobal with yes or no?
     }
-  
 }
 
-// document.getElementById('numSessions').addEventListener('keypress', function (event) {
-//     if (event.key == 'Enter') {
-//         event.preventDefault();
-//     }
-// });
-sessionSubmit.onreset = function(){
-
+sessionSubmit.onreset = function () {
     location.reload();
 }
 
