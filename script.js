@@ -84,7 +84,7 @@ function breathInstructionSwitch(beginningElement, targetElement) { //idea, span
 
 
 
-*/ 
+*/
 /* END FUNCTION GRAVEYARD */
 
 /** FUTURE IDEAS/GOALS
@@ -108,24 +108,24 @@ function breathInstructionSwitch(beginningElement, targetElement) { //idea, span
 //This in essence creates a "breathing instructin cycle"
 function swap() {
 
-    scaleUp('.breathe-in','#00ffff');
+    scaleUp('.breathe-in', '#00ffff');
 
-    setTimeout(()=>{
-        scaleDown('.breathe-in','#ffffff');
+    setTimeout(() => {
+        scaleDown('.breathe-in', '#ffffff');
         scaleUp('.breathe-hold', '#00ffff');
     }, 4000);
-    setTimeout(()=>{
+    setTimeout(() => {
         scaleDown('.breathe-hold', '#ffffff');
         scaleUp('.breathe-out', '#00ffff');
     }, 8000);
-    setTimeout(() =>{
+    setTimeout(() => {
         scaleDown('.breathe-out', '#ffffff');
         scaleUp('.breathe-hold2', '#00ffff');
     }, 12000);
-    setTimeout(()=>{
+    setTimeout(() => {
         scaleDown('.breathe-hold2', '#ffffff');
     }, 16000);
-    
+
 }
 
 //function will scale an element up by 1.5 times, and change it to a desired color
@@ -208,14 +208,11 @@ function textCountDown() {
 //timing offsets can be used to time certain animations in the timeline as a second paramter to the .add
 function boxBreathingAnimation(iterations) {
 
-    let defaultLoops = 2; //the animation timeline below will always have to loop twice
-    let loopIterations = iterations + 2;
-
     let timeline = anime.timeline({
         //change number of breathing animations
-        loop: loopIterations
+        loop: iterations
     }); //init timeline variable
-    
+
     timeline
         //boxes fade downward
         .add({
@@ -223,7 +220,7 @@ function boxBreathingAnimation(iterations) {
             opacity: [1, 0],
             duration: 1000,
             easing: 'linear',
-            delay: function (el, i,l) {
+            delay: function (el, i, l) {
                 return (i * 1000);
             }
 
@@ -235,19 +232,98 @@ function boxBreathingAnimation(iterations) {
             duration: 1000,
             easing: 'linear',
             delay: function (el, i) {
-                return (i  * 1000);
+                return (i * 1000);
+            }
+        })
+        .add({
+            targets: '.count',
+            opacity: [1, 0],
+            duration: 1000,
+            easing: 'linear',
+            delay: function (el, i, l) {
+                return (i * 1000);
+            }
+
+        })
+        //boxes fade back in upward
+        .add({
+            targets: ['.count-four', '.count-three', '.count-two', '.count-one'],
+            opacity: [0, 1],
+            duration: 1000,
+            easing: 'linear',
+            delay: function (el, i) {
+                return (i * 1000);
             }
         });
 
 }
+//credit to stack over flow, this function retreieves all CSS info of an element
+function dumpCSSText(element) {
+    var s = '';
+    var o = getComputedStyle(element);
+    for (var i = 0; i < o.length; i++) {
+        s += o[i] + ':' + o.getPropertyValue(o[i]) + ';';
+    }
+    return s;
+}
+//fade any element from start opacity to end opacit=y with a custom delay
+//after fade is complete element can have a customn display set
+function fadeAndForget(targetClassName, startOpacity, endOpacity, delay) {
+
+    let ele = document.querySelector(targetClassName);
+
+    //fade to/from desired opacity(s)
+    anime({
+        targets: targetClassName,
+        opacity: [startOpacity, endOpacity],
+        delay: delay,
+        duration: 1000,
+        easing: 'linear'
+
+    });
+
+    // make target element non existent after it fades
+    setTimeout(function () {
+        ele.style.display = `none`;
+    }, 1000 + delay);
+
+}
+
+//fade any element from start opacity to end opacity
+function fadeAndRemember(targetClassName, startOpacity, endOpacity, delay) {
+    // make the element visible within HTML DOM
+    let ele = document.querySelector(targetClassName);
+    ele.style.display = 'block';
+
+    //after element is visible, fade in/out to desired opacity
+    anime({
+        targets: targetClassName,
+        opacity: [startOpacity, endOpacity],
+        delay: delay,
+        duration: 1000,
+        easing: 'linear',
+      
+    });
+}
+
 
 
 /***************************************************************************************************/
 /***************************FUNCTION TESTING AREA **************************************************/
 
+let sessionSubmit = document.getElementById('sessionSubmit');
+//setTimeout(fadeAndRemember('.choose-sessions', 0, 1, 1500), 2000);
+sessionSubmit.addEventListener('click', function(){
+    boxBreathingAnimation(document.getElementById('numSessions').value);
+    changeBreathingInstructions(document.getElementById('numSessions').value);
+    //set timeout and call instructional text animation
+    //fade in main wrapper, set default opacity to 0
+});
 
-boxBreathingAnimation(2);
-changeBreathingInstructions(2);
+
+
+//boxBreathingAnimation(2);
+//changeBreathingInstructions(2);
 
 
 
