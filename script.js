@@ -311,9 +311,10 @@ function fadeAndRemember(targetClassName, startOpacity, endOpacity, delay) {
 /***************************************************************************************************/
 /***************************FUNCTION TESTING AREA **************************************************/
 
-let sessionSubmit = document.getElementById('sessionSubmit');
+let sessionSubmit = document.querySelector('.choose-sessions');
 //setTimeout(fadeAndRemember('.choose-sessions', 0, 1, 1500), 2000);
 sessionSubmit.addEventListener('submit', function(){
+    
     boxBreathingAnimation(document.getElementById('numSessions').value);
     changeBreathingInstructions(document.getElementById('numSessions').value);
     //set timeout and call instructional text animation
