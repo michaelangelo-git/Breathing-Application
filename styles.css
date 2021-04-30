@@ -69,7 +69,7 @@
     }
 
     .main-wrapper{
-    
+        font-family: 'Bebas New';
         height: 50%;
         width: 80%;
 
@@ -101,7 +101,7 @@
     .choose-sessions {
         position: absolute;
 
-        font-family: 'Bebas Neue';
+        font-family: 'Bebas New';
         top: 10%;
         left: 10%;
     }
