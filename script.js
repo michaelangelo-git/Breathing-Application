@@ -208,6 +208,9 @@ function textCountDown() {
 //timing offsets can be used to time certain animations in the timeline as a second paramter to the .add
 function boxBreathingAnimation(iterations) {
 
+    let defaultLoops = 2; //the animation timeline below will always have to loop twice
+    let loopIterations = iterations + 2;
+
     let timeline = anime.timeline({
         //change number of breathing animations
         loop: iterations
@@ -312,37 +315,28 @@ function fadeAndRemember(targetClassName, startOpacity, endOpacity, delay) {
 /***************************FUNCTION TESTING AREA **************************************************/
 
 let sessionSubmit = document.querySelector('.choose-sessions');
-//setTimeout(fadeAndRemember('.choose-sessions', 0, 1, 1500), 2000);
-sessionSubmit.addEventListener('submit', function(){
-    let minutes = document.querySelector('#minutes').value;
-
-    if(minutes = "1 Minute"){
-    boxBreathingAnimation(4);
-    changeBreathingInstructions(4);
+sessionSubmit.onsubmit = function(){
+    let amountOfSessions = document.getElementById('numSessions').value;
+    window.alert(amountOfSessions);
+    if (amountOfSessions == 0){
+        alert("You must at least enter 1!");
+    } else {
+        boxBreathingAnimation(amountOfSessions);
+        changeBreathingInstructions(amountOfSessions);
     }
+  
+}
 
-    if (minutes = "2 Minutes") {
-        boxBreathingAnimation(8);
-        changeBreathingInstructions(8);
-    }
+// document.getElementById('numSessions').addEventListener('keypress', function (event) {
+//     if (event.key == 'Enter') {
+//         event.preventDefault();
+//     }
+// });
+sessionSubmit.onreset = function(){
 
-    if (minutes = "3 Minutes") {
-        boxBreathingAnimation(12);
-        changeBreathingInstructions(12);
-    }
-    if (minutes = "4 Minutes") {
-        boxBreathingAnimation(16);
-        changeBreathingInstructions(16);
-    }
-    if (minutes = "5 Minutes") {
-        boxBreathingAnimation(20);
-        changeBreathingInstructions(20);
-    }
+    location.reload();
+}
 
-
-    //set timeout and call instructional text animation
-    //fade in main wrapper, set default opacity to 0
-});
 
 
 
