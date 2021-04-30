@@ -17,13 +17,19 @@
 <body>
 
     <div class="choose-sessions">
-        <form  action = "#" class="session-form">
+        <form action="#" class="session-form">
             <label for="numSessions">
-                How many Sessions?
+                How many minutes?
             </label>
-            <input type="number" id="numSessions">
-
-            <button type="submit" value="submit" id ="sessionSubmit" ><i class="fas fa-play-circle"></i></button>
+            <input list="minutes">
+            <datalist id="minutes">
+                <option value="1 Minute"></option>
+                <option value="2 Minutes"></option>
+                <option value="3 Minutes"></option>
+                <option value="4 Minutes"></option>
+                <option value="5 Minutes"></option>
+            </datalist>
+            <button type="submit" value="submit" id="sessionSubmit"><i class="fas fa-play-circle"></i></button>
         </form>
 
     </div>

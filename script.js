@@ -314,9 +314,32 @@ function fadeAndRemember(targetClassName, startOpacity, endOpacity, delay) {
 let sessionSubmit = document.querySelector('.choose-sessions');
 //setTimeout(fadeAndRemember('.choose-sessions', 0, 1, 1500), 2000);
 sessionSubmit.addEventListener('submit', function(){
-    
-    boxBreathingAnimation(document.getElementById('numSessions').value);
-    changeBreathingInstructions(document.getElementById('numSessions').value);
+    let minutes = document.querySelector('#minutes').value;
+
+    if(minutes = "1 Minute"){
+    boxBreathingAnimation(4);
+    changeBreathingInstructions(4);
+    }
+
+    if (minutes = "2 Minutes") {
+        boxBreathingAnimation(8);
+        changeBreathingInstructions(8);
+    }
+
+    if (minutes = "3 Minutes") {
+        boxBreathingAnimation(12);
+        changeBreathingInstructions(12);
+    }
+    if (minutes = "4 Minutes") {
+        boxBreathingAnimation(16);
+        changeBreathingInstructions(16);
+    }
+    if (minutes = "5 Minutes") {
+        boxBreathingAnimation(20);
+        changeBreathingInstructions(20);
+    }
+
+
     //set timeout and call instructional text animation
     //fade in main wrapper, set default opacity to 0
 });
