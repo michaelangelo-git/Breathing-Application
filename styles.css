@@ -5,11 +5,15 @@
   overflow-x: hidden;
  }
 
- 
+ @font-face {
+
+    font-family: "Bebas New";
+    src: url("/bebas-neue/BebasNeue-Regular.ttf") format("truetype")
+ }
 .main-wrapper {
     position: absolute;
 
-
+    font-family: 'Bebas Neue';
     top: 10%;
     left: 25%;
 
@@ -75,7 +79,7 @@
 
     .breathe-instruction-wrapper{
         position: absolute;
-
+       
         left: 10%;
         top: 28%;
         
@@ -96,51 +100,53 @@
 
     .choose-sessions {
         position: absolute;
-        top: 20%;
-        left: 25%;
+
+        font-family: 'Bebas Neue';
+        top: 10%;
+        left: 10%;
+    }
+
+    .session-form {
+          
+        color: white;
+        text-align: center;
+
+    }
+
+    .session-form label {
+        margin-right: 10px;
+        /* edit text */
+    }
+
+    /* can edit font size, font style */
+    .session-form input {
+        border: 2px solid turquoise;
+        
+    }
+
+    .session-form button{
+        position: relative;
+        top: 4px;
+        border: none;
+        color: white;
+
+    }
+
+    .session-form button:hover{
+        cursor: pointer;
+    }
+    .session-form button i{
+        font-size: 20px;
+        
+        
+    }
 }
+
 
 /* todo */
 /*
-* fade on submit
-* find a nice text
-* maybe in the future : choose an animation style
-* maybe in the future : choose an animation type 
+    * fade on submit
+    * maybe in the future : choose an animation style
+    * maybe in the future : choose an animation type 
 */
 
-.session-form{
-    border: 2px solid white;
-    border-radius: 10px;
-
-    background-color: turquoise;
-    padding: 10px;
-    text-align: center;
-}
-
-.session-form label {
-    display: block;
-    /* edit text */
-}
-
-/* can edit font size, font style */
-.session-form input {
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.session-form button{
-    position: relative;
-    top: 5px;
-    border: none;
-    background-color: turquoise;
-
-}
-
-.session-form button:hover{
-    cursor: pointer;
-}
-.session-form button i{
-    font-size: 25px;
-}
-}
