@@ -323,7 +323,6 @@ sessionSubmit.onsubmit = function () {
     //error checking on form submission
     if (amountOfSessions == 0) {
         alert("Something tells me 0 breaths is a bad idea");
-        location.reload();
     }
     else if (amountOfSessions < 0) {
         alert("At this time negative breathing is discouraged");
