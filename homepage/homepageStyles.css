@@ -9,11 +9,11 @@
   position: absolute;
   z-index: 1;
   top: 45%;
-  left: 50%;
+  left: 10px;
   border-radius: 50% 50%;
   height: 75px;
   width: 75px;
-  background-color: red;
+  background-color: #13C4A3;
 
   text-align: center;
 }
@@ -29,13 +29,13 @@
   position: absolute;
   z-index: 1;
   top:45%;
-  left: 50%;
+  left: 10px;
   height: 75px;
   width: 400px;
 
 
-  background-color: red;
-  color: black;
+  background-color: #13C4A3;
+  color: #32322C;
   border-radius: 300px 300px;
 
   /* align the text content horizontally */
@@ -43,10 +43,10 @@
 
 }
 .nav-bubble-expanded a {
-  color: black;
+  color: #32322C;
 }
 .nav-bubble-expanded a:hover {
-  color: green;
+  color: #4C6085;
 }
 
 /* styling properties of the icons */
