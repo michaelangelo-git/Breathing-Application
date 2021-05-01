@@ -6,7 +6,7 @@ function bubbleNav() {
     const expandedBubble = document.querySelector('.nav-bubble-expanded');
     const bubbleMenu = document.querySelector('.nav-bubble #menu');
 //  When a mouseenters the bubble div, the div will expand and icons will appear
-    bubble.addEventListener('mouseenter', function () {
+    bubble.addEventListener('mouseover', function () {
         //hide the menu bars 
         bubbleMenu.style.display = 'none';
         //make th expanded bubble exist in the DOM
@@ -79,7 +79,7 @@ function bubbleNav() {
         setTimeout(function () {
             expandedBubble.style.display = 'none';
             bubbleMenu.style.display = 'block';
-        }, 360);
+        }, 340);
 
     });
 

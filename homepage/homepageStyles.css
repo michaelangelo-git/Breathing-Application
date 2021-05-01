@@ -3,6 +3,24 @@
 *  Initial Bubble set up
 *
 */
+html{
+  background-color: var(--Queen-Blue);
+}
+
+html, body {
+  overflow: none;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  /* page colors */
+  --Queen-Blue: #4C6085;
+  --Carolina-Blue: #39A0ED;
+  --Sea-Green-Crayola: #36F1CD;
+  --Mountain-Meadow: #13C4A3;
+  --Black-Olive: #32322C;
+
+}
 
 /* Navigation Bubble before being hovered on*/
 .nav-bubble {
@@ -13,7 +31,7 @@
   border-radius: 50% 50%;
   height: 75px;
   width: 75px;
-  background-color: #13C4A3;
+  background-color: var(--Carolina-Blue);
 
   text-align: center;
 }
@@ -34,7 +52,7 @@
   width: 400px;
 
 
-  background-color: #13C4A3;
+  background-color: var(--Carolina-Blue);
   color: #32322C;
   border-radius: 300px 300px;
 
@@ -58,5 +76,68 @@
   font-size: 32px;
   margin-left: 25px;
   margin-right: 25px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  margin-right: 250px;
+  
+}
+.card-grid {
+  z-index: -10;
+  display: grid;
+  grid-template-columns: 30% 35% 35%;
+  grid-template-rows: 50% 50% 50%;
+  padding: 25px;
+  gap:5px 25px;
+  place-content: start;
+  grid-template-areas: 
+  'picture header header'
+  'picture sub sub'
+  'social . .'
+;
+  width: 600px;
+  overflow-x: hidden;
+  background-color: var(--Sea-Green-Crayola);
+}
+
+.image{
+  grid-area: picture;
+  display: flex;
+  margin: auto;
+  margin-bottom: 55px;
+}
+
+.title{
+  grid-area: header;
+  color: var(--Mountain-Meadow);
+  margin: auto;
+
+ 
+}
+
+.text{
+  grid-area: sub;
+  display: flex;
+  margin: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: var(--Carolina-Blue);
+  text-align: center;
+  
+
+}
+
+.social {
+grid-area: social;
+font-size: 32px;
+display: flex;
+
+margin:auto;
+margin-top: -25%;
+color:white;
+text-align: center;
 }
 
